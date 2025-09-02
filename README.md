@@ -6,20 +6,13 @@
 
 </div>
 
-<p align="center">
-  <a href="https://github.com/ReiArasy/Aivaa-Rise-of-Creation/stargazers">
-    <img src="https://img.shields.io/github/stars/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge" alt="Stars"/>
-  </a>
-  <a href="https://github.com/ReiArasy/Aivaa-Rise-of-Creation/network">
-    <img src="https://img.shields.io/github/forks/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge" alt="Forks"/>
-  </a>
-  <a href="https://github.com/ReiArasy/Aivaa-Rise-of-Creation/issues">
-    <img src="https://img.shields.io/github/issues/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge" alt="Issues"/>
-  </a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge" alt="License"/>
-  </a>
-</p>
+[![GitHub stars](https://img.shields.io/github/stars/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge)](https://github.com/ReiArasy/Aivaa-Rise-of-Creation/stargazers)
+
+[![GitHub forks](https://img.shields.io/github/forks/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge)](https://github.com/ReiArasy/Aivaa-Rise-of-Creation/network)
+
+[![GitHub issues](https://img.shields.io/github/issues/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge)](https://github.com/ReiArasy/Aivaa-Rise-of-Creation/issues)
+
+[![GitHub license](https://img.shields.io/github/license/ReiArasy/Aivaa-Rise-of-Creation?style=for-the-badge)](LICENSE)
 
 
 **A 2D Godot Engine game project.**
