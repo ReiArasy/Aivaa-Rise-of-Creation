@@ -1,8 +1,6 @@
 # ⚡ Aivaa: Rise of Creation
 
-<div align="center">
 
-![Godot Engine Logo](https://vectorseek.com/wp-content/uploads/2023/07/Godot-Logo-Vector.svg-.png)
 
 </div>
 
@@ -25,9 +23,6 @@
 </p>
 
 
-**A 2D Godot Engine game project.**
-
-
 
 ## 📖 Overview
 
@@ -46,20 +41,7 @@ Game ini dirancang untuk memberikan pengalaman immersive dengan perpaduan antara
 
 ## 🛠️ Tech Stack
 
-- **Game Engine:** Godot Engine
 - **Scripting Language:** GDScript
-
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Godot Engine 4.4.1
-
-##
-
-
-<div align="center">
 
 
 **⭐ Star this repo if you find it helpful!**
