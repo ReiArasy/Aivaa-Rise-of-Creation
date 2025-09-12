@@ -1,17 +1,28 @@
+class_name Player
 extends CharacterBody2D
 
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
-@export var move_speed: float = 100.0
-var state : String = "idle"
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var state_machine : PlayerStateMachine = $StateMachine
 
+signal DirectionChanged( new_direction: Vector2 )
+
+func _ready() -> void:
+	state_machine.Initialize(self)
+	pass
+	
 func _physics_process(delta: float) -> void:
-	direction = Vector2.ZERO
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	#direction = Vector2.ZERO
+	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	).normalized()
+	pass
 	
 	# input analog left
 	var joy_x = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
@@ -22,14 +33,8 @@ func _physics_process(delta: float) -> void:
 	if stick_input.length() > 0.2:
 		direction = stick_input
 	
-	# set velocity (read by physics engine)
-	velocity = direction.normalized() * move_speed
-	
 	move_and_slide()
-	
-	if SetState() or SetDirection():
-		UpdateAnimation()
-
+	pass
 
 func SetDirection() -> bool:
 	var new_dir : Vector2 = cardinal_direction
@@ -45,21 +50,13 @@ func SetDirection() -> bool:
 		return false
 		
 	cardinal_direction = new_dir
+	DirectionChanged.emit( new_dir )
+	
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
 
-
-func SetState() -> bool:
-	var new_state : String = "idle" if direction == Vector2.ZERO else "walk"
-	if new_state == state:
-		return false
-	state = new_state
-	return true
-
-
-func UpdateAnimation() -> void:
+func UpdateAnimation( state : String ) -> void:
 	animation_player.play(state + "_" + AnimDirection())
-
 
 func AnimDirection() -> String:
 	if cardinal_direction == Vector2.DOWN:
